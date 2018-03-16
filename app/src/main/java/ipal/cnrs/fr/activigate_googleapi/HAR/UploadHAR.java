@@ -1,12 +1,9 @@
-package ipal.cnrs.fr.activigate_googleapi;
+package ipal.cnrs.fr.activigate_googleapi.HAR;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -38,11 +35,11 @@ public class UploadHAR {
 
         Log.d("Connected", "Trying to send the data to Server");
         String json = createJSON(str, houseID);
-        HARManager.json2Send.add(0, json);
-        Log.d("Before Sending", String.valueOf(HARManager.json2Send.size()));
-        int jsonSize = HARManager.json2Send.size();
+        HARUtils.json2Send.add(0, json);
+        Log.d("Before Sending", String.valueOf(HARUtils.json2Send.size()));
+        int jsonSize = HARUtils.json2Send.size();
         while(jsonSize > 0) {
-            new HttpAsyncTask().execute(HARManager.json2Send.get(jsonSize - 1), serverURL);
+            new HttpAsyncTask().execute(HARUtils.json2Send.get(jsonSize - 1), serverURL);
             jsonSize--;
         }
     }

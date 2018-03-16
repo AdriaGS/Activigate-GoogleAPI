@@ -1,4 +1,4 @@
-package ipal.cnrs.fr.activigate_googleapi;
+package ipal.cnrs.fr.activigate_googleapi.HAR;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import ipal.cnrs.fr.activigate_googleapi.R;
 
 public class SecondaryActivity extends AppCompatActivity {
 
@@ -43,9 +45,9 @@ public class SecondaryActivity extends AppCompatActivity {
                 activityImage.setImageResource(resID);
 
                 tv.setText("");
-                for(int i = HARManager.sensingRecord.size() - 1; i >= Math.max(HARManager.sensingRecord.size() - 10, 0); i--) {
+                for(int i = HARUtils.sensingRecord.size() - 1; i >= Math.max(HARUtils.sensingRecord.size() - 10, 0); i--) {
 
-                    tv.setText(tv.getText() + HARManager.sensingRecord.get(i) + "\n");
+                    tv.setText(tv.getText() + HARUtils.sensingRecord.get(i) + "\n");
                 }
                 confidencdeTv.setText(confidence + "%");
             }
@@ -58,12 +60,12 @@ public class SecondaryActivity extends AppCompatActivity {
         super.onResume();
         LocalBroadcastManager.getInstance(this).registerReceiver(myReceiver, new IntentFilter(HARService.LOCAL_BROADCAST_NAME));
         tv.setText("");
-        for(int i = HARManager.sensingRecord.size() - 1; i >= Math.max(HARManager.sensingRecord.size() - 10, 0); i--) {
+        for(int i = HARUtils.sensingRecord.size() - 1; i >= Math.max(HARUtils.sensingRecord.size() - 10, 0); i--) {
 
-            tv.setText(tv.getText() + HARManager.sensingRecord.get(i) + "\n");
+            tv.setText(tv.getText() + HARUtils.sensingRecord.get(i) + "\n");
         }
-        if(HARManager.sensingRecord.size() > 1) {
-            String activity_resource = HARManager.sensingRecord.get(HARManager.sensingRecord.size() - 1).toLowerCase() + "_activity";
+        if(HARUtils.sensingRecord.size() > 1) {
+            String activity_resource = HARUtils.sensingRecord.get(HARUtils.sensingRecord.size() - 1).toLowerCase() + "_activity";
             final Resources res = getResources();
 
             int resID = res.getIdentifier(activity_resource, "drawable", getPackageName());

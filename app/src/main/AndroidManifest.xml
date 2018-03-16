@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".HAR.FitbitAuthApplication"
         android:allowBackup="true"
         android:icon="@drawable/activigate_logo"
         android:label="@string/app_name"
@@ -16,8 +17,14 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.fitbit.sampleandroidoauth2.CLIENT_ID"
+            android:value="22CVHY"/>
+        <meta-data
+            android:name="com.fitbit.sampleandroidoauth2.REDIRECT_URL"
+            android:value="https://finished"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".HAR.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,10 +32,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".HARService" />
+        <service android:name=".HAR.HARService" />
 
         <activity
-            android:name=".SecondaryActivity"
+            android:name=".HAR.SecondaryActivity"
             android:label="@string/title_activity_harsensing"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

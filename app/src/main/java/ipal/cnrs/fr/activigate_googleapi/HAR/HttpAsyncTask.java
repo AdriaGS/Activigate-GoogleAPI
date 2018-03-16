@@ -1,4 +1,4 @@
-package ipal.cnrs.fr.activigate_googleapi;
+package ipal.cnrs.fr.activigate_googleapi.HAR;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -18,7 +18,7 @@ public class HttpAsyncTask extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         Log.d("Data sent", "Data was Sent! " + result);
         if(!result.equals("Null")){
-            HARManager.json2Send.remove(HARManager.json2Send.size() - 1);
+            HARUtils.json2Send.remove(HARUtils.json2Send.size() - 1);
         }
     }
 }

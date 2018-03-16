@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ipal.cnrs.fr.activigate_googleapi.MainActivity">
+    tools:context="ipal.cnrs.fr.activigate_googleapi.HAR.MainActivity">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,7 +26,7 @@
                 <TextView android:id="@+id/sample_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:text="@string/title_message"
                     android:textSize="30dp"
                     android:layout_margin="10dp"
@@ -36,9 +36,11 @@
                     android:id="@+id/toHistoricButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/toHistoryButton"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"
+                    android:onClick="goFitbit"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -60,6 +62,7 @@
             android:layout_height="170dp"
             android:layout_margin="5dp"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:onClick="onSensing"
             android:background="@drawable/activigate_logo" />
         <TextView
             android:id="@+id/sensingTextView"
