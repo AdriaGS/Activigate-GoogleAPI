@@ -1,4 +1,4 @@
-package ipal.cnrs.fr.activigate_googleapi.HAR;
+package ipal.cnrs.fr.activigate_googleapi.Activigate.HAR;
 
 import com.google.android.gms.location.DetectedActivity;
 

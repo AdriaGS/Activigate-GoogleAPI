@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ipal.cnrs.fr.activigate_googleapi.HAR.MainActivity">
+    tools:context="ipal.cnrs.fr.activigate_googleapi.Activigate.View.MainActivity">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

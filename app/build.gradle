@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
     useLibrary 'org.apache.http.legacy'
 }
 
@@ -29,10 +32,21 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
+    compile project(':fitbitauth')
+    compile project(':fitbitapi')
+
     compile 'com.google.android.gms:play-services:11.8.0'
     compile 'com.google.android.gms:play-services-base:11.8.0'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.google.code.gson:gson:2.8.2'
-    compile project(':fitbitauth')
-    compile project(':fitbitapi')
+    compile 'com.android.support:design:26.+'
+    compile 'com.android.support:support-v13:26.+'
+    compile 'com.jjoe64:graphview:4.+'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'com.squareup.retrofit2:converter-moshi:2.1.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.0'
+
+    testCompile 'junit:junit:4.+'
 }

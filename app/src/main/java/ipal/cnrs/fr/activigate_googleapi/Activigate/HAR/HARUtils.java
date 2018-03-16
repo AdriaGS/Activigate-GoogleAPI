@@ -1,4 +1,4 @@
-package ipal.cnrs.fr.activigate_googleapi.HAR;
+package ipal.cnrs.fr.activigate_googleapi.Activigate.HAR;
 
 import java.util.ArrayList;
 

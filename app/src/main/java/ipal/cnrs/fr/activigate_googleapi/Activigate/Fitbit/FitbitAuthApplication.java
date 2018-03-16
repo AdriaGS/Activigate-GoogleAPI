@@ -1,4 +1,4 @@
-package ipal.cnrs.fr.activigate_googleapi.HAR;
+package ipal.cnrs.fr.activigate_googleapi.Activigate.Fitbit;
 
 import android.app.Activity;
 import android.app.Application;
@@ -14,7 +14,7 @@ import com.fitbit.authentication.AuthenticationManager;
 import com.fitbit.authentication.ClientCredentials;
 import com.fitbit.authentication.Scope;
 
-import ipal.cnrs.fr.activigate_googleapi.HAR.MainActivity;
+import ipal.cnrs.fr.activigate_googleapi.Activigate.View.MainActivity;
 
 import static com.fitbit.authentication.Scope.activity;
 

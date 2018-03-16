@@ -1,17 +1,14 @@
-package ipal.cnrs.fr.activigate_googleapi.HAR;
+package ipal.cnrs.fr.activigate_googleapi.Activigate.View;
 
 import android.content.Intent;
 import android.content.Context;
-import android.databinding.DataBindingUtil;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
 
-
 import android.util.Log;
-import android.widget.Button;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,7 +16,11 @@ import com.fitbit.authentication.AuthenticationHandler;
 import com.fitbit.authentication.AuthenticationManager;
 import com.fitbit.authentication.AuthenticationResult;
 
+import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARManager;
+import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARService;
+import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARUtils;
 import ipal.cnrs.fr.activigate_googleapi.R;
+//import ipal.cnrs.fr.activigate_googleapi.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements AuthenticationHandler {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements AuthenticationHan
     TextView activityTV;
 
     HARManager harManager = new HARManager();
+    //private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements AuthenticationHan
     };
 
     public void goFitbit(View view){
-        AuthenticationManager.login(this);
+
     }
 
     @Override

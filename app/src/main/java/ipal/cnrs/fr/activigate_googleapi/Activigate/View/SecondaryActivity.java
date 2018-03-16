@@ -1,4 +1,4 @@
-package ipal.cnrs.fr.activigate_googleapi.HAR;
+package ipal.cnrs.fr.activigate_googleapi.Activigate.View;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARService;
+import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARUtils;
 import ipal.cnrs.fr.activigate_googleapi.R;
 
 public class SecondaryActivity extends AppCompatActivity {

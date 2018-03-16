@@ -1,4 +1,4 @@
-package ipal.cnrs.fr.activigate_googleapi.HAR;
+package ipal.cnrs.fr.activigate_googleapi.Activigate.HAR;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -20,6 +20,9 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+
+import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARUtils;
+import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HttpAsyncTask;
 
 /**
  * Created by adriagil on 6/3/18.
