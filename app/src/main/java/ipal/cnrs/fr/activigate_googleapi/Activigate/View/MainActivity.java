@@ -10,11 +10,8 @@ import android.content.IntentFilter;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-
-import com.fitbit.authentication.AuthenticationHandler;
-import com.fitbit.authentication.AuthenticationManager;
-import com.fitbit.authentication.AuthenticationResult;
 
 import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARManager;
 import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARService;
@@ -22,10 +19,11 @@ import ipal.cnrs.fr.activigate_googleapi.Activigate.HAR.HARUtils;
 import ipal.cnrs.fr.activigate_googleapi.R;
 //import ipal.cnrs.fr.activigate_googleapi.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements AuthenticationHandler {
+public class MainActivity extends AppCompatActivity {
 
     TextView sensingTV;
     TextView activityTV;
+    Button fitbitButton;
 
     HARManager harManager = new HARManager();
     //private ActivityMainBinding binding;
@@ -38,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements AuthenticationHan
         // Assigning TextView to variables
         sensingTV = (TextView) findViewById(R.id.sensingTextView);
         activityTV = (TextView) findViewById(R.id.activity_tv);
+        fitbitButton = (Button) findViewById(R.id.toHistoricButton);
+
+        fitbitButton.setVisibility(View.INVISIBLE);
 
         //toSensingHistoric = new Intent(this, SecondaryActivity.class);
         //binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
@@ -84,20 +85,7 @@ public class MainActivity extends AppCompatActivity implements AuthenticationHan
 
     public void goFitbit(View view){
 
-    }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        AuthenticationManager.onActivityResult(requestCode, resultCode, data, (AuthenticationHandler) this);
-    }
-
-    public void onAuthFinished(AuthenticationResult authenticationResult) {
-        if (authenticationResult.isSuccessful()) {
-            Log.d("Authentication", "Succesfull");
-        } else {
-            Log.d("Authentication", "Not Succesfull");
-        }
     }
 
     private void updateTextView() {
