@@ -9,6 +9,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import ipal.cnrs.fr.activigate_googleapi.Activigate.Fitbit.OAuthToken;
+import okhttp3.HttpUrl;
+import retrofit2.Call;
 
 /**
  * Created by adria on 16/3/18.
@@ -31,12 +33,12 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * The redirect uri you have define in your google console for your project
      */
-    private static final String REDIRECT_URI = "https://finished";
+    private static final String REDIRECT_URL = "https://ipal.cnrs.fr.activigate_googleapi.Activigate.redirecturl";
     /**
      * The redirect root uri you have define in your google console for your project
      * It is also the scheme your Main Activity will react
      */
-    private static final String REDIRECT_URI_ROOT = "com.renaultnissan.acms.platform.oauth.githubsample";
+    private static final String REDIRECT_URI_ROOT = "ipal.cnrs.fr.activigate_googleapi.Activigate";
     /**
      * You are asking to use a code when autorizing
      */
@@ -142,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
                 .newBuilder() //
                 .addQueryParameter("client_id", CLIENT_ID)
                 .addQueryParameter("scope", API_SCOPE)
-                .addQueryParameter("redirect_uri", REDIRECT_URI)
+                .addQueryParameter("redirect_url", REDIRECT_URL)
                 .addQueryParameter("response_type", CODE)
                 .build();
         Intent i = new Intent(Intent.ACTION_VIEW);
@@ -191,7 +193,7 @@ public class LoginActivity extends AppCompatActivity {
         Call<OAuthToken> getRequestTokenFormCall = oAuthServer.requestTokenForm(
                 code,
                 CLIENT_ID,
-                REDIRECT_URI,
+                REDIRECT_URL,
                 GRANT_TYPE_AUTHORIZATION_CODE
         );
         getRequestTokenFormCall.enqueue(new Callback<OAuthToken>() {
