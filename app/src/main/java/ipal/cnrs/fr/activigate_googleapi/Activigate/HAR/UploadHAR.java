@@ -32,7 +32,7 @@ public class UploadHAR {
 
     Context mContext;
     static String serverURL = "https://icost.ubismart.org/mobility/store";
-    static String houseID   = "97";
+    static String houseID   = "89";
 
     public void export2ICOST(String str) {
 
